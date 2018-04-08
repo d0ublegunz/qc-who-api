@@ -1,0 +1,26 @@
+{
+  "name": "qc-who-api",
+  "version": "1.0.0",
+  "description": "QCWho resource API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon .\\src\\server.js --exec babel-node",
+    "build": "babel .\\src -d dist",
+    "serve": "node .\\dist\\server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Phillip Payne",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^2.2.16"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.17.3"
+  }
+}
