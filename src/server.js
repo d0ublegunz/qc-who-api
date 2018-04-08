@@ -1,8 +1,14 @@
-import http from 'http';
+import bodyParser from 'body-parser';
+import express from 'express';
+// import { MongoClient } from 'mongodb';
+import routes from './routes';
 
-http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-}).listen(1337, 'localhost');
+const app = express();
+const port = process.env.port || 1337;
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+routes(app, {});
 
-console.log('server running at http://127.0.0.1:1337/');
+app.listen(port, () => {
+  console.log(`Listening on port: ${port}`);
+});
